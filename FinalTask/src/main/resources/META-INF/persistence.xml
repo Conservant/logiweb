@@ -1,0 +1,31 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence_2_0.xsd"
+            version="2.0">
+
+        <persistence-unit name="logiwebPU" transaction-type="RESOURCE_LOCAL">
+            <provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+            <class>com.tsystems.projects.logiweb.entities.Truck</class>
+            <class>com.tsystems.projects.logiweb.entities.Capacity</class>
+
+
+            <validation-mode>AUTO</validation-mode>
+
+
+
+            
+            <properties>
+                <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/logiweb"/>
+                <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
+                <property name="hibernate.connection.username" value="root"/>
+                <property name="hibernate.connection.password" value="root"/>
+
+            </properties>
+
+
+
+
+	    </persistence-unit>
+
+</persistence>

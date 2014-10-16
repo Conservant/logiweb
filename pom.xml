@@ -10,5 +10,6 @@
     <module>firstApp</module>
     <module>goToDB</module>
     <module>SecondApp</module>
+    <module>FinalTask</module>
   </modules>
 </project>
