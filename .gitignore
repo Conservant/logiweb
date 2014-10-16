@@ -1,0 +1,7 @@
+.idea/
+*.iml
+*.jpeg
+*.jpg
+*.bak
+MYFIRSTSCHEME.*
+target/
