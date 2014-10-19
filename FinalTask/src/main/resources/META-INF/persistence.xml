@@ -7,7 +7,11 @@
             <provider>org.hibernate.ejb.HibernatePersistence</provider>
 
             <class>com.tsystems.projects.logiweb.entities.Truck</class>
-            <class>com.tsystems.projects.logiweb.entities.Capacity</class>
+            <class>com.tsystems.projects.logiweb.entities.Order</class>
+            <class>com.tsystems.projects.logiweb.entities.Driver</class>
+
+
+
 
 
             <validation-mode>AUTO</validation-mode>

@@ -1,6 +1,9 @@
 package com.tsystems.projects.logiweb.entities;
 
+import com.tsystems.projects.logiweb.entities.enums.Capacity;
+
 import javax.persistence.*;
+
 
 /**
  * Created by StarKiller on 16.10.2014.
@@ -8,15 +11,22 @@ import javax.persistence.*;
 @Entity
 @Table(name="truck")
 public class Truck {
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     private long id;
-    @Column(name="regNumber")
+
+    @Column(name="REGNUMBER")
     private String regNumber;
-    @Column(name="mandatoryDriverAmount")
-    private int mandatoryDriverAmount;
-    @OneToOne
-    @JoinColumn(name="capacity_id")
+
+    @Column(name = "REQUIREDNUMBEROFDRIVERS")
+    private int requiredNumberOfDrivers;
+
+    @Column(name = "CAPACITY")
+    @Enumerated(EnumType.STRING)
     private Capacity capacity;
+
+    @OneToOne(mappedBy = "truck")
+    private Order order;
 
     public Truck() {
     }
@@ -37,12 +47,12 @@ public class Truck {
         this.regNumber = regNumber;
     }
 
-    public int getMandatoryDriverAmount() {
-        return mandatoryDriverAmount;
+    public int getRequiredNumberOfDrivers() {
+        return requiredNumberOfDrivers;
     }
 
-    public void setMandatoryDriverAmount(int mandatoryDriverAmount) {
-        this.mandatoryDriverAmount = mandatoryDriverAmount;
+    public void setRequiredNumberOfDrivers(int requiredNumberOfDrivers) {
+        this.requiredNumberOfDrivers = requiredNumberOfDrivers;
     }
 
     public Capacity getCapacity() {
@@ -53,10 +63,20 @@ public class Truck {
         this.capacity = capacity;
     }
 
+    public Order getOrder() {
+        return order;
+    }
+
+    public void setOrder(Order order) {
+        this.order = order;
+    }
+
     @Override
     public String toString() {
-        return
-                id + ": " + regNumber;
-
+        return "Truck{" +
+                "id=" + id +
+                ", regNumber='" + regNumber + '\'' +
+                ", requiredNumberOfDrivers=" + requiredNumberOfDrivers +
+                ", capacity=" + capacity;
     }
 }
