@@ -21,9 +21,10 @@ public class Driver {
     private String licenseNumber;
 
     @Column(name = "DRIVER_STATUS")
+    @Enumerated(EnumType.STRING)
     private DriverStatus status;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.DETACH)
     @JoinColumn(name = "TRUCK_ID")
     private Truck truck;
 

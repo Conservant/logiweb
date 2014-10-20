@@ -48,8 +48,13 @@
 
 
 
+
+
   </dependencies>
+
+
   <build>
     <finalName>FinalTask</finalName>
+
   </build>
 </project>

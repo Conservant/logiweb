@@ -14,13 +14,18 @@ public class OrderDTO {
     public OrderDTO(int uniqueNumber, OrderStatus orderStatus, String regNumber) {
         this.uniqueNumber = uniqueNumber;
         this.orderStatus = orderStatus;
-        this.regNumber = regNumber;
+        this.regNumber = (regNumber == null)?"---":regNumber;
     }
 
     public OrderDTO(Order order) {
         this.uniqueNumber = order.getUniqueNumber();
         this.orderStatus = order.getStatus();
-        //this.regNumber =
+        try {
+            this.regNumber = order.getTruck().getRegNumber();
+        } catch (NullPointerException e) {
+            this.regNumber = "---";
+        }
+
     }
 
     public int getUniqueNumber() {

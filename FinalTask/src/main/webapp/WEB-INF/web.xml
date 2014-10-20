@@ -19,6 +19,11 @@
         <servlet-class>com.tsystems.projects.logiweb.servlets.OrderServlet</servlet-class>
     </servlet>
     
+    <servlet>
+        <servlet-name>AddTruck</servlet-name>
+        <servlet-class>com.tsystems.projects.logiweb.servlets.AddTruckServlet</servlet-class>
+    </servlet>
+    
     
     <servlet-mapping>
         <servlet-name>GetTrucksServlet</servlet-name>
@@ -33,6 +38,11 @@
     <servlet-mapping>
         <servlet-name>GetOrdersServlet</servlet-name>
         <url-pattern>/getOrders</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>AddTruck</servlet-name>
+        <url-pattern>/AddTruck</url-pattern>
     </servlet-mapping>
 
 </web-app>

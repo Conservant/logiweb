@@ -6,3 +6,6 @@
 MYFIRSTSCHEME.*
 target/
 *.mwb
+*.png
+*.gif
+*.jpg

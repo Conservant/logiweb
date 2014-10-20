@@ -18,13 +18,19 @@ import java.util.List;
 public class AddTruckServlet extends HttpServlet{
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String reqNumber = req.getParameter("reqNumber");
+
+        String regNumber = req.getParameter("regNumber");
         int amountOfDrivers = Integer.parseInt(req.getParameter("amountOfDrivers"));
         Capacity capacity = Capacity.valueOf(req.getParameter("capacity"));
 
         TruckService service = new TruckService();
 
-        TruckDTO newTruck= new TruckDTO(reqNumber, amountOfDrivers, capacity);
+        TruckDTO newTruck= new TruckDTO();
+
+        newTruck.setRegNumber(regNumber);
+        newTruck.setRequiredCountOfDrivers(amountOfDrivers);
+        newTruck.setCapacity(capacity);
+
 
         service.addTruck(newTruck);
 
@@ -34,7 +40,31 @@ public class AddTruckServlet extends HttpServlet{
 
         req.setAttribute("trucks", list);
 
-        getServletContext().getRequestDispatcher("/Manager.jsp").forward(req, resp);
+        getServletContext().getRequestDispatcher("/getTrucks.jsp").forward(req, resp);
 
     }
+//
+//    public static void main(String[] args) {
+//
+//
+//        String regNumber = "E954KX98";
+//        int amountOfDrivers = 2;
+//        Capacity capacity = Capacity.SMALL;
+//
+//        TruckService service = new TruckService();
+//
+//        TruckDTO newTruck= new TruckDTO(regNumber, amountOfDrivers, capacity);
+//
+//        service.addTruck(newTruck);
+//
+//        TruckResponseDTO trucks = service.getTrucks();
+//
+//        List<TruckDTO> list = trucks.getTrucks();
+//
+//        for(TruckDTO truck: list) {
+//            System.out.println(truck);
+//        }
+//
+//
+//    }
 }

@@ -21,31 +21,15 @@ public class OrderServlet extends HttpServlet {
     static OrderService service = new OrderService();
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-
-        System.out.println("Был выбран раздел заказы");
-
-    }
-
-    public static void main(String[] args) {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         OrderResponseDTO orders = service.getOrders();
 
-        List<OrderDTO> list = orders.getOrders();
+        List<OrderDTO> orderDTOList = orders.getOrders();
 
-        for (OrderDTO orderDTO: list) {
-            System.out.println(orderDTO);
-        }
+        req.setAttribute("orders", orderDTOList);
 
-//        TruckResponseDTO trucks = service.getTrucks(reqDTO);
-//
-//        List<TruckDTO> list = trucks.getTrucks();
-//
-//        for(TruckDTO truck: list) {
-//            System.out.println(truck);
-//        }
-
-
+        getServletContext().getRequestDispatcher("/getOrders.jsp").forward(req, resp);
     }
+
 }

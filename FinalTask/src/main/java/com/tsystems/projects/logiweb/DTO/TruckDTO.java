@@ -11,6 +11,9 @@ public class TruckDTO {
     private int requiredCountOfDrivers;
     private Capacity capacity;
 
+    public TruckDTO() {
+    }
+
     public TruckDTO(Truck truck) {
 
         this.regNumber = truck.getRegNumber();

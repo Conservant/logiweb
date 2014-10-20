@@ -1,9 +1,8 @@
 package com.tsystems.projects.logiweb.servlets;
 
-import com.tsystems.projects.logiweb.DTO.TruckDTO;
-import com.tsystems.projects.logiweb.DTO.TruckRequestDTO;
-import com.tsystems.projects.logiweb.DTO.TruckResponseDTO;
-import com.tsystems.projects.logiweb.servises.TruckService;
+import com.tsystems.projects.logiweb.DTO.DriverDTO;
+import com.tsystems.projects.logiweb.DTO.DriverResponseDTO;
+import com.tsystems.projects.logiweb.servises.DriverService;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -16,15 +15,19 @@ import java.util.List;
  * Created by StarKiller on 17.10.2014.
  */
 public class DriverServlet extends HttpServlet{
+
+    static DriverService service = new DriverService();
+
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        DriverResponseDTO drivers = service.getDrivers();
 
-        System.out.println("Был выбран раздел водятелы");
+        List<DriverDTO> driverDTOList = drivers.getDrivers();
+
+        req.setAttribute("drivers", driverDTOList);
+
+        getServletContext().getRequestDispatcher("/getDrivers.jsp").forward(req, resp);
 
     }
-
-
-
-
 }
