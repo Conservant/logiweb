@@ -9,6 +9,11 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name="zakaz")
+@NamedQueries({
+        @NamedQuery(name = "getAllOrders", query = "select o from Order o"),
+        @NamedQuery(name = "getByUniqueNumber", query = "select o from Order o where t.uniqueNumber=:uniqName")
+})
+
 public class Order {
     @Id
     @GeneratedValue

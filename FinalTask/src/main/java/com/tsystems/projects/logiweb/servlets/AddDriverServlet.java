@@ -1,36 +1,34 @@
 package com.tsystems.projects.logiweb.servlets;
 
+import com.tsystems.projects.logiweb.DTO.DriverDTO;
+import com.tsystems.projects.logiweb.servises.DriverService;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 
 /**
  * Created by StarKiller on 24.10.2014.
  */
-@WebServlet("/login")
-public class LoginServlet extends HttpServlet {
+@WebServlet("/Manager/addDriver")
+public class AddDriverServlet extends HttpServlet{
+    DriverService service = new DriverService();
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String login = req.getParameter("login");
-        String password = req.getParameter("password");
 
-        if (login.equals("manager") && password.equals("123")) {
-            HttpSession session = req.getSession(true);
-            session.setAttribute("user", "manager");
+        DriverDTO driver = new DriverDTO(req.getParameter("name"), req.getParameter("licNumber"));
 
+        boolean b = service.addDriver(driver);
 
-
-            getServletContext().getRequestDispatcher("/Manager/index.jsp").forward(req, resp);
-
-
+        if (b) {
+            getServletContext().getRequestDispatcher("/Manager/getDrivers").forward(req, resp);
         }
 
         PrintWriter writer = resp.getWriter();
-        writer.println("EROR!");
+        writer.println("}{ER BAM");
     }
 }

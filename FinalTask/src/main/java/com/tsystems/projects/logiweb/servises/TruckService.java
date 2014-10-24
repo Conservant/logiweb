@@ -21,7 +21,7 @@ public class TruckService {
 
     public List<TruckDTO> getTrucks() {
 
-        List<Truck> resultList = truckDAO.getAllTrucks();
+        List<Truck> resultList = truckDAO.getAll("Trucks");
         List<TruckDTO> trucks = new ArrayList<TruckDTO>();
 
         for(Truck truck: resultList) {
@@ -32,14 +32,21 @@ public class TruckService {
 
     }
 
-    public void addTruck(TruckDTO truckDTO) {
+    public boolean addTruck(TruckDTO truckDTO) {
+
+        if (truckDAO.getBy("RegNumber", truckDTO.getRegNumber()) != null){
+            return false;
+        }
 
         Truck truck = new Truck();
+
         truck.setRegNumber(truckDTO.getRegNumber());
         truck.setRequiredNumberOfDrivers(truckDTO.getRequiredCountOfDrivers());
         truck.setCapacity(truckDTO.getCapacity());
 
-        truckDAO.addTruck(truck);
+        truckDAO.add(truck);
+
+        return true;
 
     }
 }

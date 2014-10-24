@@ -10,61 +10,35 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 /**
  * Created by StarKiller on 19.10.2014.
  */
 @WebServlet("/Manager/addTruck")
 public class AddTruckServlet extends HttpServlet{
+
+    TruckService service = new TruckService();
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        String regNumber = req.getParameter("regNumber");
-        int amountOfDrivers = Integer.parseInt(req.getParameter("amountOfDrivers"));
-        Capacity capacity = Capacity.valueOf(req.getParameter("capacity"));
-
-        TruckService service = new TruckService();
-
         TruckDTO newTruck= new TruckDTO();
 
-        newTruck.setRegNumber(regNumber);
-        newTruck.setRequiredCountOfDrivers(amountOfDrivers);
-        newTruck.setCapacity(capacity);
+        newTruck.setRegNumber(req.getParameter("regNumber"));
+        newTruck.setRequiredCountOfDrivers(Integer.parseInt(req.getParameter("amountOfDrivers")));
+        newTruck.setCapacity(Capacity.valueOf(req.getParameter("capacity")));
 
 
-        service.addTruck(newTruck);
-/*
-        TruckResponseDTO trucks = service.getTrucks();
+        boolean b = service.addTruck(newTruck);
 
-        List<TruckDTO> list = trucks.getTrucks();
+        if (b) {
+            getServletContext().getRequestDispatcher("/Manager/getTrucks").forward(req, resp);
+        }
 
-        req.setAttribute("trucks", list);*/
+        PrintWriter writer = resp.getWriter();
+        writer.println("}{ER BAM");
 
-        getServletContext().getRequestDispatcher("/Manager/index.jsp").forward(req, resp);
-
+        //getServletContext().getRequestDispatcher("/Manager/index.jsp").forward(req, resp);
     }
-//
-//    public static void main(String[] args) {
-//
-//
-//        String regNumber = "E954KX98";
-//        int amountOfDrivers = 2;
-//        Capacity capacity = Capacity.SMALL;
-//
-//        TruckService service = new TruckService();
-//
-//        TruckDTO newTruck= new TruckDTO(regNumber, amountOfDrivers, capacity);
-//
-//        service.addTruck(newTruck);
-//
-//        TruckResponseDTO trucks = service.getTrucks();
-//
-//        List<TruckDTO> list = trucks.getTrucks();
-//
-//        for(TruckDTO truck: list) {
-//            System.out.println(truck);
-//        }
-//
-//
-//    }
 }

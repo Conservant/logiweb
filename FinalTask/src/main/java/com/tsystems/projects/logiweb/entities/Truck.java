@@ -10,6 +10,10 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name="truck")
+@NamedQueries( {
+        @NamedQuery(name = "getAllTrucks", query = "select t from Truck t"),
+        @NamedQuery(name = "getByRegNumber", query = "select t from Truck t where t.regNumber=:uniqName")
+})
 public class Truck {
     @Id
     @GeneratedValue

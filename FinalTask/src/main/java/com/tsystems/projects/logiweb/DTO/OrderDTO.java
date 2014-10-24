@@ -11,6 +11,9 @@ public class OrderDTO {
     private OrderStatus orderStatus;
     private String regNumber;
 
+    public OrderDTO() {
+    }
+
     public OrderDTO(int uniqueNumber, OrderStatus orderStatus, String regNumber) {
         this.uniqueNumber = uniqueNumber;
         this.orderStatus = orderStatus;

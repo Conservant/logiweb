@@ -17,13 +17,13 @@ import java.util.List;
 @WebServlet("/Manager/getOrders")
 public class OrderServlet extends HttpServlet {
 
-    static OrderService service = new OrderService();
+    OrderService service = new OrderService();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<OrderDTO> orderDTOList = service.getOrders();
         req.setAttribute("orders", orderDTOList);
-        getServletContext().getRequestDispatcher("/getOrders.jsp").forward(req, resp);
+        getServletContext().getRequestDispatcher("/Manager/getOrders.jsp").forward(req, resp);
     }
 
 }

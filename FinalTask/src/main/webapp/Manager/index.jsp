@@ -18,7 +18,7 @@
 <head>
     <title>Mitenev 1.0</title>
     <meta charset="utf-8">
-    <link href="../mystyles.css" rel="stylesheet">
+    <link href="./mystyles.css" rel="stylesheet">
 
 </head>
 <body>

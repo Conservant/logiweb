@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  * Created by StarKiller on 17.10.2014.
- */
+ *//*
 public class TruckDAO {
 
     private EntityManagerFactory emf;
@@ -19,10 +19,13 @@ public class TruckDAO {
 
     public TruckDAO() { }
 
-    public List<Truck> getAllTrucks() {
+    public List<Truck> getAll() {
         emf = Persistence.createEntityManagerFactory("logiwebPU");
         em = emf.createEntityManager();
-        List<Truck> resultList = em.createQuery("SELECT t FROM Truck t", Truck.class).getResultList();
+
+        List<Truck> resultList = em.createNamedQuery("getAllTrucks").getResultList();
+
+        //List<Truck> resultList = em.createQuery("SELECT t FROM Truck t", Truck.class).getResultList();
 
         em.close();
         emf.close();
@@ -41,4 +44,9 @@ public class TruckDAO {
         em.close();
         emf.close();
     }
+}
+*/
+
+public class TruckDAO extends AbstractDAO<Truck> {
+
 }

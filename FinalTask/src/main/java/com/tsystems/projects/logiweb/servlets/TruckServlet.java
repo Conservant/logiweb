@@ -17,12 +17,13 @@ import java.util.List;
  */
 @WebServlet("/Manager/getTrucks")
 public class TruckServlet extends HttpServlet {
+
     private TruckService service = new TruckService();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<TruckDTO> list = service.getTrucks();
         req.setAttribute("trucks", list);
-        getServletContext().getRequestDispatcher("/getTrucks.jsp").forward(req, resp);
+        getServletContext().getRequestDispatcher("/Manager/getTrucks.jsp").forward(req, resp);
     }
 }

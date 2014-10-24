@@ -11,7 +11,7 @@ import java.util.List;
 
 /**
  * Created by StarKiller on 18.10.2014.
- */
+ *//*
 public class OrderDAO {
     private EntityManagerFactory emf;
     private EntityManager em;
@@ -27,4 +27,9 @@ public class OrderDAO {
 
         return orderList;
     }
+}
+
+*/
+public class OrderDAO extends AbstractDAO<Order> {
+
 }

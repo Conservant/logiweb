@@ -19,7 +19,7 @@ public class DriverService {
 
     public List<DriverDTO> getDrivers() {
 
-        List<Driver> driverList = driverDAO.getAllDrivers();
+        List<Driver> driverList = driverDAO.getAll("Drivers");
 
         List<DriverDTO> drivers = new ArrayList<DriverDTO>();
 
@@ -29,5 +29,22 @@ public class DriverService {
 
         return drivers;
 
+    }
+
+
+    public boolean addDriver(DriverDTO newDriver) {
+
+        if (driverDAO.getBy("LicNumber", newDriver.getLicenseNumber()) != null) {
+            return false;
+        }
+
+        Driver driver = new Driver();
+        driver.setName(newDriver.getName());
+        driver.setLicenseNumber(newDriver.getLicenseNumber());
+
+        driverDAO.add(driver);
+
+
+        return true;
     }
 }

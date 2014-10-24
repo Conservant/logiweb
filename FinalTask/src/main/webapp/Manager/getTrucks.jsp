@@ -36,13 +36,13 @@
 
     <ul class="main-menu">
         <li>
-            <a href="./Manager/getTrucks">Грузовики</a>
+            <a href="./getTrucks">Грузовики</a>
         </li>
         <li>
-            <a href="./Manager/getDrivers">Водители</a>
+            <a href="./getDrivers">Водители</a>
         </li>
         <li>
-            <a href="./Manager/getOrders">Заказы</a>
+            <a href="./getOrders">Заказы</a>
         </li>
     </ul>
 
