@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 /**
@@ -19,6 +20,18 @@ public class TruckServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        String user = (String)req.getSession().getAttribute("user");
+
+        if (user == null) {
+
+            System.out.println("User = null");
+            
+            PrintWriter writer = resp.getWriter();
+
+            resp.sendRedirect("EROR@2");
+
+        }
 
         List<TruckDTO> list = service.getTrucks();
 

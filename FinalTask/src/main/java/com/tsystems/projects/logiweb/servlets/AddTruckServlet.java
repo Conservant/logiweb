@@ -39,7 +39,7 @@ public class AddTruckServlet extends HttpServlet{
 
         req.setAttribute("trucks", list);*/
 
-        getServletContext().getRequestDispatcher("/getTrucks.jsp").forward(req, resp);
+        getServletContext().getRequestDispatcher("/Manager/index.jsp").forward(req, resp);
 
     }
 //
