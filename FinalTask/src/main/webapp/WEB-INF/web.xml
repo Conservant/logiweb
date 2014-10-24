@@ -4,45 +4,6 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
-    <servlet>
-        <servlet-name>GetTrucksServlet</servlet-name>
-        <servlet-class>com.tsystems.projects.logiweb.servlets.TruckServlet</servlet-class>
-    </servlet>
 
-    <servlet>
-        <servlet-name>GetDriversServlet</servlet-name>
-        <servlet-class>com.tsystems.projects.logiweb.servlets.DriverServlet</servlet-class>
-    </servlet>
-
-    <servlet>
-        <servlet-name>GetOrdersServlet</servlet-name>
-        <servlet-class>com.tsystems.projects.logiweb.servlets.OrderServlet</servlet-class>
-    </servlet>
-    
-    <servlet>
-        <servlet-name>AddTruck</servlet-name>
-        <servlet-class>com.tsystems.projects.logiweb.servlets.AddTruckServlet</servlet-class>
-    </servlet>
-    
-    
-    <servlet-mapping>
-        <servlet-name>GetTrucksServlet</servlet-name>
-        <url-pattern>/getTrucks</url-pattern>
-    </servlet-mapping>
-
-    <servlet-mapping>
-        <servlet-name>GetDriversServlet</servlet-name>
-        <url-pattern>/getDrivers</url-pattern>
-    </servlet-mapping>
-
-    <servlet-mapping>
-        <servlet-name>GetOrdersServlet</servlet-name>
-        <url-pattern>/getOrders</url-pattern>
-    </servlet-mapping>
-    
-    <servlet-mapping>
-        <servlet-name>AddTruck</servlet-name>
-        <url-pattern>/AddTruck</url-pattern>
-    </servlet-mapping>
 
 </web-app>

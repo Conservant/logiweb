@@ -42,13 +42,13 @@
 
     <ul class="main-menu">
         <li>
-            <a href="./getTrucks">Грузовики</a>
+            <a href="./Manager/getTrucks">Грузовики</a>
         </li>
         <li>
-            <a href="./getDrivers">Водители</a>
+            <a href="./Manager/getDrivers">Водители</a>
         </li>
         <li>
-            <a href="./getOrders">Заказы</a>
+            <a href="./Manager/getOrders">Заказы</a>
         </li>
     </ul>
 
