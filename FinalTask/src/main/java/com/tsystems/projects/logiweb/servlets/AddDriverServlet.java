@@ -25,7 +25,7 @@ public class AddDriverServlet extends HttpServlet{
         boolean b = service.addDriver(driver);
 
         if (b) {
-            getServletContext().getRequestDispatcher("/Manager/getDrivers").forward(req, resp);
+            getServletContext().getRequestDispatcher("/Manager/manager.jsp").forward(req, resp);
         }
 
         PrintWriter writer = resp.getWriter();

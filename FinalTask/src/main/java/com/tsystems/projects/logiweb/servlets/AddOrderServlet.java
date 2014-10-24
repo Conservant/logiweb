@@ -23,5 +23,6 @@ public class AddOrderServlet extends HttpServlet{
         orderDTO.setUniqueNumber(555);
 
         service.addOrder(orderDTO);
+
     }
 }

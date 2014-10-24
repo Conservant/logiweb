@@ -1,0 +1,146 @@
+body{margin:0; padding:0; background-color:#FFFFFF}
+table, td {border-collapse:collapse;}
+table, td, img {border:0;}
+input, textarea, select{font:11px Tahoma, Arial, Geneva, sans-serif; color:#000000; border-right: 1px solid #CAD2D5; border-bottom: 1px solid #CAD2D5; padding-left:2px}
+
+form, td {margin:0; padding:0;}
+td, tr {font:11px/12px tahoma, arial, helvetica, sans-serif; color:#B6B4B4; vertical-align:top;  text-align:left;}
+
+td, tr {vertical-align:top; text-align:left}
+
+.align_right{text-align:right}
+
+.bottom{vertical-align:bottom}
+
+
+.header{
+    font:10px/12px tahoma, arial, helvetica, sans-serif;
+    color:#C5C5C5;
+}
+.header strong{
+    font:10px/12px tahoma, arial, helvetica, sans-serif;
+    color:#C5C5C5;
+    text-decoration:underline;
+}
+.header a{
+    text-decoration:none;
+    color:#C5C5C5;
+}
+.header a:hover{
+    text-decoration:underline;
+}
+
+.content{
+    font:11px/13px tahoma, arial, helvetica, sans-serif;
+    color:#555555;
+}
+.content b{
+    font:11px/13px tahoma, arial, helvetica, sans-serif;
+    color:#555555;
+    font-weight:bold;
+}
+.content strong{
+    font:10px/13px tahoma, arial, helvetica, sans-serif;
+    color:#2A6087;
+    font-weight:bold;
+    text-transform:uppercase;
+}
+.content span{
+    font:10px/13px tahoma, arial, helvetica, sans-serif;
+    color:#2A6087;
+    font-weight:bold;
+    text-transform:uppercase;
+}
+.content a{
+    text-decoration:underline;
+    color:#D52D00;
+}
+.content a:hover{
+    text-decoration:none;
+}
+.content b a{
+    text-decoration:underline;
+    color:#555555;
+    font-weight:normal;
+}
+.content b a:hover{
+    text-decoration:none;
+}
+
+.content ul {
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+.content li {
+    background:url(images/dot.jpg) center left no-repeat;
+    margin:0 0 0 0;
+    padding:0 0 0 7px;
+}
+.content li a {
+    font:9px/18px tahoma, arial, helvetica, sans-serif;
+    color:#D52D00;
+    text-decoration:underline;
+    font-weight:bold;
+    background-position:left center;
+}
+.content li a:hover {
+    text-decoration:none;
+}
+
+form{
+    width:150px;
+    margin:0px auto;
+    padding: 15px 20px;
+    background: #f5f5f5;
+    border-radius: 10px;
+}
+
+label{
+    display: block;
+    margin-top:0.5em;
+    margin-bottom:0.5em;
+}
+
+label:first-child{
+    margin-top:0;
+}
+
+input[type="text"],
+input[type="password"]{
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 4px 5px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    box-sizing:border-box;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus{
+    box-shadow:0 0 5px rgba(50, 200, 255, 0.5);
+    outline:none;
+}
+
+input[type="submit"]{
+    display: block;
+    margin-top:1em;
+    padding: 5px 15px;
+    font-weight: bold;
+    color:#333;
+    background: white;
+    border: none;
+    border-radius: 5px;
+    background-image: linear-gradient(top, #fff, #ddd);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    text-shadow:0 1px 1px white;
+
+}
+
+
+
+
+
+
+

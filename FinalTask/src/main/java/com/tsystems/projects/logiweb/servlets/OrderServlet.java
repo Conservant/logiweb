@@ -23,7 +23,7 @@ public class OrderServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<OrderDTO> orderDTOList = service.getOrders();
         req.setAttribute("orders", orderDTOList);
-        getServletContext().getRequestDispatcher("/Manager/getOrders.jsp").forward(req, resp);
+        getServletContext().getRequestDispatcher("/Manager/getOrders2.jsp").forward(req, resp);
     }
 
 }

@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Table(name="zakaz")
 @NamedQueries({
         @NamedQuery(name = "getAllOrders", query = "select o from Order o"),
-        @NamedQuery(name = "getByUniqueNumber", query = "select o from Order o where t.uniqueNumber=:uniqName")
+        @NamedQuery(name = "getByUniqueNumber", query = "select o from Order o where o.uniqueNumber=:uniqName")
 })
 
 public class Order {

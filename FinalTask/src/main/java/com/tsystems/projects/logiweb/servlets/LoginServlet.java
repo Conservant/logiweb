@@ -25,7 +25,7 @@ public class LoginServlet extends HttpServlet {
 
 
 
-            getServletContext().getRequestDispatcher("/Manager/index.jsp").forward(req, resp);
+            getServletContext().getRequestDispatcher("/Manager/manager.jsp").forward(req, resp);
 
 
         }

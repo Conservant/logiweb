@@ -23,6 +23,6 @@ public class DriverServlet extends HttpServlet{
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<DriverDTO> driverDTOList = service.getDrivers();
         req.setAttribute("drivers", driverDTOList);
-        getServletContext().getRequestDispatcher("/Manager/getDrivers.jsp").forward(req, resp);
+        getServletContext().getRequestDispatcher("/Manager/getDrivers2.jsp").forward(req, resp);
     }
 }
