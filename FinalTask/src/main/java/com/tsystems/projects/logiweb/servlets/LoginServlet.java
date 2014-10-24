@@ -24,6 +24,7 @@ public class LoginServlet extends HttpServlet {
             session.setAttribute("user", "manager");
             getServletContext().getRequestDispatcher("/Manager/index.jsp").forward(req, resp);
         }
+
         PrintWriter writer = resp.getWriter();
         writer.println("EROR!");
     }

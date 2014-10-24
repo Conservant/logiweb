@@ -5,15 +5,16 @@ import com.tsystems.projects.logiweb.entities.enums.Capacity;
 import com.tsystems.projects.logiweb.servises.TruckService;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
 
 /**
  * Created by StarKiller on 19.10.2014.
  */
+@WebServlet("/Manager/addTruck")
 public class AddTruckServlet extends HttpServlet{
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
