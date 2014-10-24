@@ -1,7 +1,6 @@
 package com.tsystems.projects.logiweb.servlets;
 
 import com.tsystems.projects.logiweb.DTO.DriverDTO;
-import com.tsystems.projects.logiweb.DTO.DriverResponseDTO;
 import com.tsystems.projects.logiweb.servises.DriverService;
 
 import javax.servlet.ServletException;
@@ -21,9 +20,8 @@ public class DriverServlet extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        DriverResponseDTO drivers = service.getDrivers();
 
-        List<DriverDTO> driverDTOList = drivers.getDrivers();
+        List<DriverDTO> driverDTOList = service.getDrivers();
 
         req.setAttribute("drivers", driverDTOList);
 

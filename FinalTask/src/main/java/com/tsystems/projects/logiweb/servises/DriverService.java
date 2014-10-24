@@ -2,7 +2,6 @@ package com.tsystems.projects.logiweb.servises;
 
 import com.tsystems.projects.logiweb.DAO.DriverDAO;
 import com.tsystems.projects.logiweb.DTO.DriverDTO;
-import com.tsystems.projects.logiweb.DTO.DriverResponseDTO;
 import com.tsystems.projects.logiweb.entities.Driver;
 
 import java.util.ArrayList;
@@ -18,17 +17,17 @@ public class DriverService {
         driverDAO = new DriverDAO();
     }
 
-    public DriverResponseDTO getDrivers() {
+    public List<DriverDTO> getDrivers() {
 
         List<Driver> driverList = driverDAO.getAllDrivers();
 
-        List<DriverDTO> resultList = new ArrayList<DriverDTO>();
+        List<DriverDTO> drivers = new ArrayList<DriverDTO>();
 
         for (Driver driver: driverList) {
-            resultList.add(new DriverDTO(driver.getName(), driver.getLicenseNumber()));
+            drivers.add(new DriverDTO(driver.getName(), driver.getLicenseNumber()));
         }
 
-        return new DriverResponseDTO(resultList);
+        return drivers;
 
     }
 }

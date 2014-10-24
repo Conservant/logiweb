@@ -3,7 +3,6 @@ package com.tsystems.projects.logiweb.servises;
 
 import com.tsystems.projects.logiweb.DAO.TruckDAO;
 import com.tsystems.projects.logiweb.DTO.TruckDTO;
-import com.tsystems.projects.logiweb.DTO.TruckResponseDTO;
 import com.tsystems.projects.logiweb.entities.Truck;
 
 import java.util.ArrayList;
@@ -20,7 +19,7 @@ public class TruckService {
         truckDAO = new TruckDAO();
     }
 
-    public TruckResponseDTO getTrucks() {
+    public List<TruckDTO> getTrucks() {
 
         List<Truck> resultList = truckDAO.getAllTrucks();
         List<TruckDTO> trucks = new ArrayList<TruckDTO>();
@@ -29,7 +28,7 @@ public class TruckService {
             trucks.add(new TruckDTO(truck));
         }
 
-        return new TruckResponseDTO(trucks);
+        return trucks;
 
     }
 

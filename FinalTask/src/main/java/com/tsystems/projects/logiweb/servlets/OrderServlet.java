@@ -1,9 +1,6 @@
 package com.tsystems.projects.logiweb.servlets;
 
-
-
 import com.tsystems.projects.logiweb.DTO.OrderDTO;
-import com.tsystems.projects.logiweb.DTO.OrderResponseDTO;
 import com.tsystems.projects.logiweb.servises.OrderService;
 
 import javax.servlet.ServletException;
@@ -23,9 +20,7 @@ public class OrderServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        OrderResponseDTO orders = service.getOrders();
-
-        List<OrderDTO> orderDTOList = orders.getOrders();
+        List<OrderDTO> orderDTOList = service.getOrders();
 
         req.setAttribute("orders", orderDTOList);
 

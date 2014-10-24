@@ -1,7 +1,6 @@
 package com.tsystems.projects.logiweb.servlets;
 
 import com.tsystems.projects.logiweb.DTO.TruckDTO;
-import com.tsystems.projects.logiweb.DTO.TruckResponseDTO;
 import com.tsystems.projects.logiweb.servises.TruckService;
 
 import javax.servlet.ServletException;
@@ -21,9 +20,7 @@ public class TruckServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        TruckResponseDTO trucks = service.getTrucks();
-
-        List<TruckDTO> list = trucks.getTrucks();
+        List<TruckDTO> list = service.getTrucks();
 
         req.setAttribute("trucks", list);
 

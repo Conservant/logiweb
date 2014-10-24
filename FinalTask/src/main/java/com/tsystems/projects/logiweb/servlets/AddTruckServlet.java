@@ -1,7 +1,6 @@
 package com.tsystems.projects.logiweb.servlets;
 
 import com.tsystems.projects.logiweb.DTO.TruckDTO;
-import com.tsystems.projects.logiweb.DTO.TruckResponseDTO;
 import com.tsystems.projects.logiweb.entities.enums.Capacity;
 import com.tsystems.projects.logiweb.servises.TruckService;
 
@@ -33,12 +32,12 @@ public class AddTruckServlet extends HttpServlet{
 
 
         service.addTruck(newTruck);
-
+/*
         TruckResponseDTO trucks = service.getTrucks();
 
         List<TruckDTO> list = trucks.getTrucks();
 
-        req.setAttribute("trucks", list);
+        req.setAttribute("trucks", list);*/
 
         getServletContext().getRequestDispatcher("/getTrucks.jsp").forward(req, resp);
 

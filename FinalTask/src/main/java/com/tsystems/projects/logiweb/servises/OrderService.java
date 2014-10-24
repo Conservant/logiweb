@@ -2,7 +2,6 @@ package com.tsystems.projects.logiweb.servises;
 
 import com.tsystems.projects.logiweb.DAO.OrderDAO;
 import com.tsystems.projects.logiweb.DTO.OrderDTO;
-import com.tsystems.projects.logiweb.DTO.OrderResponseDTO;
 import com.tsystems.projects.logiweb.entities.Order;
 
 import java.util.ArrayList;
@@ -18,7 +17,7 @@ public class OrderService {
         orderDAO = new OrderDAO();
     }
 
-    public OrderResponseDTO getOrders() {
+    public List<OrderDTO> getOrders() {
 
         List<Order> resultList = orderDAO.getAllOrders();
 
@@ -30,7 +29,7 @@ public class OrderService {
 
         }
 
-         return new OrderResponseDTO(orders);
+         return orders;
 
     }
 
