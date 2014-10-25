@@ -18,11 +18,11 @@ public class AddOrderServlet extends HttpServlet{
     private OrderService service = new OrderService();
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        OrderDTO orderDTO = new OrderDTO();
+        /*OrderDTO orderDTO = new OrderDTO();
 
         orderDTO.setUniqueNumber(555);
 
-        service.addOrder(orderDTO);
-
+        service.addOrder(orderDTO);*/
+        getServletContext().getRequestDispatcher("/Manager/manager.jsp").forward(req, resp);
     }
 }

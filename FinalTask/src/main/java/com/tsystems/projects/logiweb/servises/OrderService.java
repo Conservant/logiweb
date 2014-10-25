@@ -19,19 +19,21 @@ public class OrderService {
     }
 
     public List<OrderDTO> getOrders() {
-
         List<Order> resultList = orderDAO.getAll("Orders");
-
         List<OrderDTO> orders = new ArrayList<OrderDTO>();
-
         for (Order order: resultList) {
-
             orders.add(new OrderDTO(order));
-
         }
+        return orders;
+    }
 
-         return orders;
-
+    public List<OrderDTO> getOrders(OrderStatus status) {
+        List<Order> resultList = orderDAO.getOrdersByStatus(status);
+        List<OrderDTO> orders = new ArrayList<OrderDTO>();
+        for (Order order: resultList) {
+            orders.add(new OrderDTO(order));
+        }
+        return orders;
     }
 
     public boolean addOrder(OrderDTO newOrder) {
@@ -39,7 +41,6 @@ public class OrderService {
         if (orderDAO.getBy("UniqueNumber", ""+newOrder.getUniqueNumber()) != null) {
             return false;
         }
-
         Order order = new Order();
         order.setUniqueNumber(newOrder.getUniqueNumber());
         order.setStatus(OrderStatus.CREATED);

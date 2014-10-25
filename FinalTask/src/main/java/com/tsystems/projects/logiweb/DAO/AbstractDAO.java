@@ -28,7 +28,7 @@ public abstract class AbstractDAO<T> {
 
     public T getBy(String byWhat, String uniqName) {
         Query q = em.createNamedQuery("getBy"+byWhat);
-        q.setParameter(":uniqName", uniqName);
+        q.setParameter("uniqName", uniqName);
         T t = (T)q.getSingleResult();
         return t;
     }

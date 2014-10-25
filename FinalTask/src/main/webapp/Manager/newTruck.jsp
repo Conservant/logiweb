@@ -60,13 +60,16 @@
                     <h2>Управление парком фур</h2>
                     <p></p>
 
-                    <form action="./AddTruck" method="post">
+                    <form action="./addTruck" method="post">
                         <label>Номер:</label>
                         <input type="text" name = "regNumber">
-                        <label>Число водителей:</label>
-                        <input type="text" name = "amountOfDrivers">
+
                         <label>Вместимость</label>
                         <input type="text" name="capacity">
+
+                        <label>Число водителей:</label>
+                        <input type="text" name = "amountOfDrivers">
+
                         <input type="submit" value="Добавить грузовичок">
                     </form>
 

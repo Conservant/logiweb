@@ -1,15 +1,18 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: StarKiller
-  Date: 25.10.2014
-  Time: 2:07
-  To change this template use File | Settings | File Templates.
+<!----<%--
+Created by IntelliJ IDEA.
+User: StarKiller
+Date: 25.10.2014
+Time: 1:44
+To change this template use File | Settings | File Templates.
 --%>
+
+        <!---->
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
 <%@ page isELIgnored="false" %>
 
 
+<!---->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -45,42 +48,30 @@
 
             <div id="sitetite">
                 <h1><a href="http://www.templatemo.com" target="_parent"><img src="../images/templatemo_logo.png" alt="free css template" /></a></h1>
-            </div>
+            </div> <!-- end of site_title -->
+
             <ul class="navigation">
-                <li><a href="manager.jsp">Грузовики</a></li>
+                <li><a href="manager.jsp">На главную</a></li>
             </ul>
 
         </div>
         <div class="scroll">
             <div class="scrollContainer">
-
-
-                <div class="panel" id="gallery">
-                    <h2>Заказы</h2>
-
-                    <table>
-                        <tr>
-                            <th>Номер заказа</th>
-                            <th>Статус</th>
-                            <th>Фура</th>
-                        </tr>
-                        <c:forEach items="${orders}" var = "order">
-                            <tr>
-                                <td>
-                                    <c:out value="${order.uniqueNumber}"/>
-                                </td>
-                                <td>
-                                    <c:out value="${order.orderStatus}"/>
-                                </td>
-                                <td>
-                                    <c:out value="${order.regNumber}"/>
-                                </td>
-                            </tr>
-                        </c:forEach>
-                    </table>
-
+                <div class="panel" id="home">
+                    <h2>Назначение водителей</h2>
+                    <p></p>
+                    <form action="/closeOrder" method="post">
+                        Выполненные заказы:<br>
+                        <select multiple name="performedOrders[]" size="5">
+                            <c:forEach items="perf_orders" var="order">
+                                <option>
+                                    <c:out value="order.uniqueNumber"/>
+                                </option>
+                            </c:forEach>
+                        </select>
+                        <input type="submit" value="Закрыть">
+                    </form>
                 </div>
-
             </div>
         </div>
     </div>

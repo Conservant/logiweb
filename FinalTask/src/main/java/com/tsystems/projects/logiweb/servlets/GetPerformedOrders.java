@@ -1,6 +1,7 @@
 package com.tsystems.projects.logiweb.servlets;
 
 import com.tsystems.projects.logiweb.DTO.OrderDTO;
+import com.tsystems.projects.logiweb.entities.enums.OrderStatus;
 import com.tsystems.projects.logiweb.servises.OrderService;
 
 import javax.servlet.ServletException;
@@ -12,18 +13,18 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * Created by StarKiller on 17.10.2014.
+ * Created by StarKiller on 25.10.2014.
  */
-@WebServlet("/Manager/getOrders")
-public class OrderServlet extends HttpServlet {
 
-    OrderService service = new OrderService();
+//выполненные заказы, т.е. те которые можно закрыть
+@WebServlet("/Manager/getPerformed")
+public class GetPerformedOrders extends HttpServlet{
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        List<OrderDTO> orderDTOList = service.getOrders();
-        req.setAttribute("orders", orderDTOList);
-        getServletContext().getRequestDispatcher("/Manager/getOrders.jsp").forward(req, resp);
+        OrderService service = new OrderService();
+        List<OrderDTO> orders = service.getOrders(OrderStatus.PERFORMED);
+        req.setAttribute("perf_orders", orders);
+        getServletContext().getRequestDispatcher("/Manager/closeOrders.jsp");
     }
-
 }

@@ -11,7 +11,8 @@ import javax.persistence.*;
 @Table(name = "driver")
 @NamedQueries({
         @NamedQuery(name = "getAllDrivers", query = "select d from Driver d"),
-        @NamedQuery(name = "getByLicNumber", query = "select d from Driver d where d.licenseNumber=:uniqName")
+        @NamedQuery(name = "getByLicNumber", query = "select d from Driver d where d.licenseNumber=:uniqName"),
+        @NamedQuery(name = "getByStatus", query = "select d from Driver d where d.status=:status")
 })
 public class Driver {
     @Id

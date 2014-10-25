@@ -47,7 +47,7 @@
                 <h1><a href="http://www.templatemo.com" target="_parent"><img src="../images/templatemo_logo.png" alt="free css template" /></a></h1>
             </div>
             <ul class="navigation">
-                <li><a href="manager.jsp">Грузовики</a></li>
+                <li><a href="manager.jsp">Заказы</a></li>
             </ul>
 
         </div>

@@ -27,15 +27,10 @@ public class AuthFilter implements Filter {
         String user = (String)session.getAttribute("user");
 
         if (user == null) {
-
-            req.getServletContext().getRequestDispatcher("/errorpage.html").forward(req, resp);
-
+            req.getSession().setAttribute("message", "Ошибка регистрации");
+            req.getServletContext().getRequestDispatcher("/errorpage.jsp").forward(req, resp);
         }
-
         filterChain.doFilter(req, resp);
-
-
-
     }
 
     @Override

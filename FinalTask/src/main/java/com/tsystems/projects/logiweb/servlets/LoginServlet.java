@@ -18,19 +18,23 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String login = req.getParameter("login");
         String password = req.getParameter("password");
+        HttpSession session;
 
         if (login.equals("manager") && password.equals("123")) {
-            HttpSession session = req.getSession(true);
+            session = req.getSession(true);
             session.setAttribute("user", "manager");
-
-
-
-            getServletContext().getRequestDispatcher("/Manager/manager.jsp").forward(req, resp);
-
-
+            req.getServletContext().getRequestDispatcher("/Manager/manager.jsp").forward(req, resp);
+        }
+        if (login.equals("driver") && password.equals("456")) {
+            session = req.getSession(true);
+            session.setAttribute("user", "driver");
+            req.getServletContext().getRequestDispatcher("/Driver/driver.html").forward(req, resp);
         }
 
-        PrintWriter writer = resp.getWriter();
-        writer.println("EROR!");
+
+        req.getSession().setAttribute("message", "Пользователь не найден");
+        req.getServletContext().getRequestDispatcher("/errorpage.jsp").forward(req, resp);
     }
+
 }
+

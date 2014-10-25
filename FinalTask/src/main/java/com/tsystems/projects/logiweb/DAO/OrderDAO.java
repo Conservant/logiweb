@@ -2,10 +2,12 @@ package com.tsystems.projects.logiweb.DAO;
 
 import com.tsystems.projects.logiweb.entities.Order;
 import com.tsystems.projects.logiweb.entities.Truck;
+import com.tsystems.projects.logiweb.entities.enums.OrderStatus;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,5 +33,15 @@ public class OrderDAO {
 
 */
 public class OrderDAO extends AbstractDAO<Order> {
+
+
+    public List<Order> getOrdersByStatus(OrderStatus orderStatus) {
+
+        Query q = em.createQuery("select o from Order o where o.status=:orderStatus", Order.class);
+        q.setParameter("orderStatus", orderStatus);
+        List<Order> resList = q.getResultList();
+        return resList;
+
+    }
 
 }

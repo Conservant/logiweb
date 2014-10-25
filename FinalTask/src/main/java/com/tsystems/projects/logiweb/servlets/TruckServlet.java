@@ -24,6 +24,6 @@ public class TruckServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<TruckDTO> list = service.getTrucks();
         req.setAttribute("trucks", list);
-        getServletContext().getRequestDispatcher("/Manager/getTruckers.jsp").forward(req, resp);
+        getServletContext().getRequestDispatcher("/Manager/getTrucks.jsp").forward(req, resp);
     }
 }

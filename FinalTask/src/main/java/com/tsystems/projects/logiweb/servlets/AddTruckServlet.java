@@ -26,19 +26,19 @@ public class AddTruckServlet extends HttpServlet{
         TruckDTO newTruck= new TruckDTO();
 
         newTruck.setRegNumber(req.getParameter("regNumber"));
-        newTruck.setRequiredCountOfDrivers(Integer.parseInt(req.getParameter("amountOfDrivers")));
         newTruck.setCapacity(Capacity.valueOf(req.getParameter("capacity")));
+        newTruck.setRequiredCountOfDrivers(Integer.parseInt(req.getParameter("amountOfDrivers")));
 
 
         boolean b = service.addTruck(newTruck);
 
         if (b) {
-            getServletContext().getRequestDispatcher("/Manager/manager.jsp").forward(req, resp);
+            getServletContext().getRequestDispatcher("/Manager/newDriver.jsp").forward(req, resp);
         }
 
         PrintWriter writer = resp.getWriter();
         writer.println("}{ER BAM");
 
-        //getServletContext().getRequestDispatcher("/Manager/index.jsp").forward(req, resp);
+        //getServletContext().getRequestDispatcher("/Manager/manager.jsp").forward(req, resp);
     }
 }

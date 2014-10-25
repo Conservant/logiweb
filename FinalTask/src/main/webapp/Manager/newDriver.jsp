@@ -60,12 +60,14 @@
                     <h2>Водители</h2>
                     <p></p>
 
-                    <form action="./AddDriver" method="post">
-                        <label>Фамилия Имя:</label>
-                        <input type="text" name = "regNumber">
-                        <label>Номер удостоверения</label>
-                        <input type="text" name = "amountOfDrivers">
-                        <input type="submit" value="Добавить раба">
+                    <form class="login" method="post" action="./addDriver">
+                        <label>Фамилия</label>
+                        <input type="text" name="firstName"/>
+                        <label>Имя</label>
+                        <input type="text" name="lastName"/>
+                        <label>Номер ВУ</label>
+                        <input type="text" name="licNumber" />
+                        <input type="submit" value="Добавить" />
                     </form>
 
                 </div>

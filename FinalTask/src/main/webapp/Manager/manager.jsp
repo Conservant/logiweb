@@ -64,7 +64,7 @@
                     </div>
                     <div class="col_w240">
                         <h3>Новый грузовик</h3>
-                        <div class="image_wrapper"><a href = "./Manager/addTruck"><img src="../images/templatemo_image_02.jpg" alt="image 2" /></a></div>
+                        <div class="image_wrapper"><a href = "./Manager/newTruck.jsp"><img src="../images/templatemo_image_02.jpg" alt="image 2" /></a></div>
                         <p>Появилась новый автомобиль? Не забудь добавить его в базу данных. Укажи регистрационный номер, вместимость и число водителей в смене.</p>
 
                     </div>
@@ -84,7 +84,7 @@
                     </div>
                     <div class="col_w240">
                         <h3>Новый водитель</h3>
-                        <div class="image_wrapper"><a href = "./Manager/addDriver"><img src="../images/templatemo_image_02.jpg" alt="image 2" /></a></div>
+                        <div class="image_wrapper"><a href = "./Manager/newDriver.jsp"><img src="../images/templatemo_image_02.jpg" alt="image 2" /></a></div>
                         <p>Наняли нового водителя? Введи его имя и номер водительского удостоверения и он сразу попадет в базу данных.</p>
                     </div>
                 </div>
@@ -96,25 +96,23 @@
                     <div id="gallery_box">
                         <ul>
                             <li>
-                                <a href="http://www.templatemo.com/page/1"><img src="../images/gallery/image_01.jpg" alt="template" /></a>
+                                <a href="./Manager/newOrder.jsp"><img src="../images/gallery/image_01.jpg" alt="" /></a>
                                 <p>Создать заказ.</p>
-
                             </li>
                             <li>
-                                <a href="http://www.templatemo.com/page/2"><img src="../images/gallery/image_02.jpg" alt="free website template" /></a>
+                                <a href="./Manager/newOrderItem"><img src="../images/gallery/image_02.jpg" alt="free website template" /></a>
                                 <p>Подтверждение заказа.</p>
-
                             </li>
                             <li>
-                                <a href="http://www.templatemo.com/page/3"><img src="../images/gallery/image_03.jpg" alt="html css template" /></a>
+                                <a href="./Manager/getConfirmed"><img src="../images/gallery/image_03.jpg" alt="html css template" /></a>
                                 <p>Отгрузка</p>
                             </li>
                             <li>
-                                <a href="http://www.templatemo.com/page/4"><img src="../images/gallery/image_04.jpg" alt="photo 4" /></a>
+                                <a href="./Manager/getShipped"><img src="../images/gallery/image_04.jpg" alt="photo 4" /></a>
                                 <p>Отправка</p>
                             </li>
                             <li>
-                                <a href="http://www.templatemo.com/page/5"><img src="../images/gallery/image_05.jpg" alt="photo 5" /></a>
+                                <a href="./Manager/getPerformed"><img src="../images/gallery/image_05.jpg" alt="photo 5" /></a>
                                 <p>Закрытие</p>
                             </li>
                             <li>

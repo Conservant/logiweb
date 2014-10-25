@@ -1,16 +1,8 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: StarKiller
-  Date: 25.10.2014
-  Time: 1:44
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
 <%@ page isELIgnored="false" %>
 
 
-<!---->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -48,40 +40,26 @@
                 <h1><a href="http://www.templatemo.com" target="_parent"><img src="../images/templatemo_logo.png" alt="free css template" /></a></h1>
             </div> <!-- end of site_title -->
 
-            <ul class="navigation">
-                <li><a href="manager.jsp">На главную</a></li>
-            </ul>
+
 
         </div>
         <div class="scroll">
             <div class="scrollContainer">
                 <div class="panel" id="home">
 
-                    <h2>Управление парком фур</h2>
+                    <h2>Ошибка доступа</h2>
                     <p></p>
-                    <table>
-                        <tr>
-                            <th>Номер</th>
-                            <th>Число водителей</th>
-                            <th>Вместимость</th>
-                        </tr>
-                        <c:forEach items="${trucks}" var = "driver">
-                            <tr>
-                                <td>
-                                    <c:out value="${driver.regNumber}"/>
-                                </td>
-                                <td>
-                                    <c:out value="${driver.requiredCountOfDrivers}"/>
-                                </td>
-                                <td>
-                                    <c:out value="${driver.capacity}"/>
-                                </td>
-                            </tr>
-                        </c:forEach>
-                    </table>
+
+                    <div class="cleaner_h40"></div>
+
+
+
 
 
                 </div>
+
+
+
             </div>
         </div>
     </div>
