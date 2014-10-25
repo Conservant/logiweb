@@ -59,12 +59,12 @@
                     <div class="col_w240">
                         <h3>Все грузовики</h3>
                         <div class="image_wrapper"><a href = "./Manager/getTrucks"><img src="../images/templatemo_image_01.jpg" alt="image 1" /></a></div>
-                        <p>Тут можно посмотреть весь парк наших автомобилий.</p>
+                        <p>Тут можно посмотреть весь парк наших автомобилей.</p>
 
                     </div>
                     <div class="col_w240">
                         <h3>Новый грузовик</h3>
-                        <div class="image_wrapper"><img src="../images/templatemo_image_02.jpg" alt="image 2" /></div>
+                        <div class="image_wrapper"><a href = "./Manager/addTruck"><img src="../images/templatemo_image_02.jpg" alt="image 2" /></a></div>
                         <p>Появилась новый автомобиль? Не забудь добавить его в базу данных. Укажи регистрационный номер, вместимость и число водителей в смене.</p>
 
                     </div>
@@ -72,7 +72,7 @@
                 </div>
 
                 <div class="panel" id="aboutus">
-                    <h2>Управление парком фур</h2>
+                    <h2>Штат водителей</h2>
                     <p></p>
                     <div class="cleaner_h40"></div>
 
@@ -84,8 +84,8 @@
                     </div>
                     <div class="col_w240">
                         <h3>Новый водитель</h3>
-                        <div class="image_wrapper"><img src="../images/templatemo_image_02.jpg" alt="image 2" /></div>
-                        <p>Наняли нового водителя? Введи его имя и номер водительсого удостоверения и он сразу попадет в базу данных.</p>
+                        <div class="image_wrapper"><a href = "./Manager/addDriver"><img src="../images/templatemo_image_02.jpg" alt="image 2" /></a></div>
+                        <p>Наняли нового водителя? Введи его имя и номер водительского удостоверения и он сразу попадет в базу данных.</p>
                     </div>
                 </div>
 

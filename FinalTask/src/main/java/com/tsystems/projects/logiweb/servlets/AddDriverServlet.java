@@ -20,7 +20,11 @@ public class AddDriverServlet extends HttpServlet{
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        DriverDTO driver = new DriverDTO(req.getParameter("name"), req.getParameter("licNumber"));
+        String name = req.getParameter("firstName") + " " + req.getParameter("lastName");
+        String licNumber = req.getParameter("licNumber");
+
+
+        DriverDTO driver = new DriverDTO(name, licNumber);
 
         boolean b = service.addDriver(driver);
 

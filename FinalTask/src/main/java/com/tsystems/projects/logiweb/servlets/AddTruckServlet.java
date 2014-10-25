@@ -33,7 +33,7 @@ public class AddTruckServlet extends HttpServlet{
         boolean b = service.addTruck(newTruck);
 
         if (b) {
-            getServletContext().getRequestDispatcher("/Manager/getTrucks").forward(req, resp);
+            getServletContext().getRequestDispatcher("/Manager/manager.jsp").forward(req, resp);
         }
 
         PrintWriter writer = resp.getWriter();

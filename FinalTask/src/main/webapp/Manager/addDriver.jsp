@@ -1,8 +1,16 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: StarKiller
+  Date: 25.10.2014
+  Time: 9:23
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
 <%@ page isELIgnored="false" %>
 
 
+<!---->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -41,9 +49,7 @@
             </div> <!-- end of site_title -->
 
             <ul class="navigation">
-                <li><a href="#home">Грузовики</a></li>
-                <li><a href="#aboutus">Водители</a></li>
-                <li><a href="#gallery">Заказы</a></li>
+                <li><a href="manager.jsp">На главную</a></li>
             </ul>
 
         </div>
@@ -51,19 +57,21 @@
             <div class="scrollContainer">
                 <div class="panel" id="home">
 
-                    <h2>Ошибка доступа</h2>
+                    <h2>Управление парком фур</h2>
                     <p></p>
 
-                    <div class="cleaner_h40"></div>
-
-
-
+                    <form class="login" method="post" action="./addDriver">
+                        <label>Фамилия</label>
+                        <input type="text" name="firstName"/>
+                        <label>Имя</label>
+                        <input type="text" name="lastName"/>
+                        <label>Номер ВУ</label>
+                        <input type="text" name="licNumber" />
+                        <input type="submit" value="Добавить" />
+                    </form>
 
 
                 </div>
-
-
-
             </div>
         </div>
     </div>

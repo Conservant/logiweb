@@ -28,7 +28,7 @@ public class AuthFilter implements Filter {
 
         if (user == null) {
 
-            req.getServletContext().getRequestDispatcher("/index.html").forward(req, resp);
+            req.getServletContext().getRequestDispatcher("/errorpage.html").forward(req, resp);
 
         }
 
