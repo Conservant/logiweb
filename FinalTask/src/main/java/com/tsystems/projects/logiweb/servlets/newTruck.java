@@ -16,7 +16,7 @@ import java.io.PrintWriter;
  * Created by StarKiller on 19.10.2014.
  */
 @WebServlet("/Manager/addTruck")
-public class AddTruckServlet extends HttpServlet{
+public class NewTruck extends HttpServlet{
 
     TruckService service = new TruckService();
 

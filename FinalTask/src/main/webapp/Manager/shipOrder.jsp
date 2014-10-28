@@ -45,55 +45,42 @@ To change this template use File | Settings | File Templates.
 
     <div id="slider">
         <div id="header">
-
             <div id="sitetite">
-                <h1><a href="http://www.templatemo.com" target="_parent"><img src="../images/templatemo_logo.png" alt="free css template" /></a></h1>
+                <h1><a href="" target="_parent"><img src="../images/logo.png"/></a></h1>
             </div> <!-- end of site_title -->
 
             <ul class="navigation">
                 <li><a href="manager.jsp">На главную</a></li>
             </ul>
-
         </div>
         <div class="scroll">
             <div class="scrollContainer">
                 <div class="panel" id="home">
 
-                    <h2>Назначение водителей</h2>
+                    <h2>Назначение фуры</h2>
                     <p></p>
 
 
-                    <form action="" method="post">
+                    <form action="/Manager/shipOrder" method="post">
 
-                        Не отправленные грузовики:<br>
-                        <select name="truck" size="5">
-                            <option>Заказ такой-то</option>
+                        Не отгруженные заказы:<br>
+                        <select name="order" size="5">
+                            <c:forEach items="${confirmed_orders}" var="order">
 
-
-
-
-
+                                <option><c:out value="${order.uniqueNumber}"/></option>
+                            </c:forEach>
 
                         </select>
                         <br>
-                        Свободные водители:<br>
-                        <select multiple name="drivers[]" size="5">
-                            <option>Заказ такой-то</option>
-                            <option>Заказ такой-то</option>
-                            <option>Заказ такой-то</option>
-                            <option>Заказ такой-то</option>
-                            <option>Заказ такой-то</option>
-                            <option>Заказ такой-то</option>
-                            <option>Заказ такой-то</option>
+                        Доступные грузовики:<br>
+                        <select name="truck" size="5">
+                            <c:forEach items="${free_trucks}" var="truck">
+                                <option><c:out value="${truck.regNumber}" /></option>
+                            </c:forEach>
                         </select>
-                        <input type="submit" value="Отправить">
-
-
-
+                        <input type="submit" value="Отгрузить">
 
                     </form>
-
-
                 </div>
             </div>
         </div>

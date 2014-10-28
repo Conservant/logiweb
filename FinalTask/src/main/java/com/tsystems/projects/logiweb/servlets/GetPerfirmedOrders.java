@@ -18,13 +18,18 @@ import java.util.List;
 
 //выполненные заказы, т.е. те которые можно закрыть
 @WebServlet("/Manager/getPerformed")
-public class GetPerformedOrders extends HttpServlet{
+public class GetPerfirmedOrders extends HttpServlet{
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         OrderService service = new OrderService();
         List<OrderDTO> orders = service.getOrders(OrderStatus.PERFORMED);
         req.setAttribute("perf_orders", orders);
-        getServletContext().getRequestDispatcher("/Manager/closeOrders.jsp");
+        getServletContext().getRequestDispatcher("/Manager/closeOrder.jsp").forward(req, resp);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        doGet(req, resp);
     }
 }

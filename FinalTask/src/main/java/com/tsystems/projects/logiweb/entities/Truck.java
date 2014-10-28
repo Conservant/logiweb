@@ -3,6 +3,7 @@ package com.tsystems.projects.logiweb.entities;
 import com.tsystems.projects.logiweb.entities.enums.Capacity;
 
 import javax.persistence.*;
+import java.util.Set;
 
 
 /**
@@ -19,6 +20,7 @@ public class Truck {
     @GeneratedValue
     private long id;
 
+
     @Column(name="REGNUMBER")
     private String regNumber;
 
@@ -29,8 +31,11 @@ public class Truck {
     @Enumerated(EnumType.STRING)
     private Capacity capacity;
 
-    @OneToOne(mappedBy = "truck")
-    private Order order;
+    @OneToOne(mappedBy = "truck", fetch = FetchType.EAGER)
+    private Order order= null;
+
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "truck")
+    private Set<Driver> drivers;
 
     public Truck() {
     }
@@ -75,6 +80,14 @@ public class Truck {
         this.order = order;
     }
 
+    public Set<Driver> getDrivers() {
+        return drivers;
+    }
+
+    public void setDrivers(Set<Driver> drivers) {
+        this.drivers = drivers;
+    }
+
     @Override
     public String toString() {
         return "Truck{" +
@@ -83,4 +96,6 @@ public class Truck {
                 ", requiredNumberOfDrivers=" + requiredNumberOfDrivers +
                 ", capacity=" + capacity;
     }
+
+
 }

@@ -1,4 +1,4 @@
-<!----<%--
+<%--
 Created by IntelliJ IDEA.
 User: StarKiller
 Date: 25.10.2014
@@ -6,7 +6,7 @@ Time: 1:44
 To change this template use File | Settings | File Templates.
 --%>
 
-        <!---->
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
 <%@ page isELIgnored="false" %>
@@ -47,7 +47,7 @@ To change this template use File | Settings | File Templates.
         <div id="header">
 
             <div id="sitetite">
-                <h1><a href="http://www.templatemo.com" target="_parent"><img src="../images/templatemo_logo.png" alt="free css template" /></a></h1>
+                <h1><a href="http://www.templatemo.com" target="_parent"><img src="../images/logo.png" alt="free css template" /></a></h1>
             </div> <!-- end of site_title -->
 
             <ul class="navigation">
@@ -58,14 +58,14 @@ To change this template use File | Settings | File Templates.
         <div class="scroll">
             <div class="scrollContainer">
                 <div class="panel" id="home">
-                    <h2>Назначение водителей</h2>
+                    <h2>Закрытие заказов</h2>
                     <p></p>
-                    <form action="/closeOrder" method="post">
+                    <form action="/Manager/closeOrder" method="post">
                         Выполненные заказы:<br>
                         <select multiple name="performedOrders[]" size="5">
-                            <c:forEach items="perf_orders" var="order">
+                            <c:forEach items="${perf_orders}" var="order">
                                 <option>
-                                    <c:out value="order.uniqueNumber"/>
+                                    <c:out value="${order.uniqueNumber}"/>
                                 </option>
                             </c:forEach>
                         </select>

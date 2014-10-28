@@ -44,7 +44,7 @@
         <div id="header">
 
             <div id="sitetite">
-                <h1><a href="http://www.templatemo.com" target="_parent"><img src="../images/templatemo_logo.png" alt="free css template" /></a></h1>
+                <h1><a href="" target="_parent"><img src="../images/logo.png"/></a></h1>
             </div>
             <ul class="navigation">
                 <li><a href="manager.jsp">Заказы</a></li>
@@ -58,7 +58,11 @@
                 <div class="panel" id="gallery">
                     <h2>Заказы</h2>
 
-                    <p>Создан заказ № <c:out value="${order.uniqueNumber}"/> </p>
+                    <p><c:out value="${msg}"/> </p>
+
+                    <form action="/Manager/newOrder" method="get">
+                        <input type = "submit" value="Создать"/>
+                    </form>
 
                 </div>
 
@@ -67,7 +71,7 @@
     </div>
 
     <div id="templatemo_footer">
-        Copyright © 20414 <a href="#">Грузоперевозки</a>
+        Copyright © 2014 <a href="#">Грузоперевозки</a>
     </div>
 
 </div>

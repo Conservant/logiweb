@@ -21,6 +21,7 @@
     <link href="../templatemo_style.css" rel="stylesheet" type="text/css" />
 
     <link rel="stylesheet" href="../css/coda-slider.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/kickstart.css" media="all" />
 
     <script src="../js/jquery-1.2.6.js" type="text/javascript"></script>
     <script src="../js/jquery.scrollTo-1.3.3.js" type="text/javascript"></script>
@@ -45,7 +46,7 @@
         <div id="header">
 
             <div id="sitetite">
-                <h1><a href="http://www.templatemo.com" target="_parent"><img src="../images/templatemo_logo.png" alt="free css template" /></a></h1>
+                <h1><a href="../login" target="_parent"><img src="../images/logo.png"/></a></h1>
             </div> <!-- end of site_title -->
 
             <ul class="navigation">
@@ -64,18 +65,23 @@
                             <th>Номер</th>
                             <th>Число водителей</th>
                             <th>Вместимость</th>
+                            <th>Номер заказа</th>
                         </tr>
-                        <c:forEach items="${trucks}" var = "driver">
+                        <c:forEach items="${trucks}" var = "truck">
                             <tr>
                                 <td>
-                                    <c:out value="${driver.regNumber}"/>
+                                    <c:out value="${truck.regNumber}"/>
                                 </td>
                                 <td>
-                                    <c:out value="${driver.requiredCountOfDrivers}"/>
+                                    <c:out value="${truck.requiredCountOfDrivers}"/>
                                 </td>
                                 <td>
-                                    <c:out value="${driver.capacity}"/>
+                                    <c:out value="${truck.capacity}"/>
                                 </td>
+                                <td>
+                                    <c:out value="${truck.order}"/>
+                                </td>
+
                             </tr>
                         </c:forEach>
                     </table>

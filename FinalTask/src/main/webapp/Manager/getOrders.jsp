@@ -18,6 +18,7 @@
     <meta name="keywords" content="Tomato HTML CSS Template, free download, red, light gray, mini site" />
     <meta name="description" content="Tomato Template is a free HTML CSS layout provided by templatemo.com" />
     <link href="../templatemo_style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="../css/kickstart.css" media="all" />
 
     <link rel="stylesheet" href="../css/coda-slider.css" type="text/css" charset="utf-8" />
 
@@ -44,7 +45,7 @@
         <div id="header">
 
             <div id="sitetite">
-                <h1><a href="http://www.templatemo.com" target="_parent"><img src="../images/templatemo_logo.png" alt="free css template" /></a></h1>
+                <h1><a href="http://www.templatemo.com" target="_parent"><img src="../images/logo.png" alt="free css template" /></a></h1>
             </div>
             <ul class="navigation">
                 <li><a href="manager.jsp">Грузовики</a></li>
@@ -61,8 +62,11 @@
                     <table>
                         <tr>
                             <th>Номер заказа</th>
+                            <th>Груз</th>
+                            <th>Вес</th>
+
+                            <th>Номер фуры</th>
                             <th>Статус</th>
-                            <th>Фура</th>
                         </tr>
                         <c:forEach items="${orders}" var = "order">
                             <tr>
@@ -70,10 +74,17 @@
                                     <c:out value="${order.uniqueNumber}"/>
                                 </td>
                                 <td>
-                                    <c:out value="${order.orderStatus}"/>
+                                    <c:out value="${order.description}"/>
                                 </td>
                                 <td>
+                                    <c:out value="${order.weight}"/>
+                                </td>
+
+                                <td>
                                     <c:out value="${order.regNumber}"/>
+                                </td>
+                                <td>
+                                    <c:out value="${order.orderStatus}"/>
                                 </td>
                             </tr>
                         </c:forEach>

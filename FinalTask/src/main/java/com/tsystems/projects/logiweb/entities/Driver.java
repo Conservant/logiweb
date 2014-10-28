@@ -11,8 +11,7 @@ import javax.persistence.*;
 @Table(name = "driver")
 @NamedQueries({
         @NamedQuery(name = "getAllDrivers", query = "select d from Driver d"),
-        @NamedQuery(name = "getByLicNumber", query = "select d from Driver d where d.licenseNumber=:uniqName"),
-        @NamedQuery(name = "getByStatus", query = "select d from Driver d where d.status=:status")
+        @NamedQuery(name = "getByLicNumber", query = "select d from Driver d where d.licenseNumber=:uniqName")
 })
 public class Driver {
     @Id
@@ -29,9 +28,12 @@ public class Driver {
     @Enumerated(EnumType.STRING)
     private DriverStatus status;
 
-    @OneToOne(cascade = CascadeType.DETACH)
+//    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+//    @JoinColumn(name = "TRUCK_ID")
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "TRUCK_ID")
     private Truck truck;
+
 
     public Driver() {
     }

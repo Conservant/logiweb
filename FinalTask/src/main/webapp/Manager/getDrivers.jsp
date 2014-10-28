@@ -13,6 +13,7 @@
     <link href="../templatemo_style.css" rel="stylesheet" type="text/css" />
 
     <link rel="stylesheet" href="../css/coda-slider.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/kickstart.css" media="all" />
 
     <script src="../js/jquery-1.2.6.js" type="text/javascript"></script>
     <script src="../js/jquery.scrollTo-1.3.3.js" type="text/javascript"></script>
@@ -37,7 +38,7 @@
         <div id="header">
 
             <div id="sitetite">
-                <h1><a href="http://www.templatemo.com" target="_parent"><img src="../images/templatemo_logo.png" alt="free css template" /></a></h1>
+                <h1><a href="http://www.templatemo.com" target="_parent"><img src="../images/logo.png" alt="free css template" /></a></h1>
             </div> <!-- end of site_title -->
 
             <ul class="navigation">
@@ -55,6 +56,7 @@
                         <tr>
                             <th>ИмяФамилия</th>
                             <th>Удостоверение</th>
+                            <th>Статус</th>
                         </tr>
                         <c:forEach items="${drivers}" var ="driver">
                             <tr>
@@ -63,6 +65,9 @@
                                 </td>
                                 <td>
                                     <c:out value="${driver.licenseNumber}"/>
+                                </td>
+                                <td>
+                                    <c:out value="${driver.status}"/>
                                 </td>
                             </tr>
                         </c:forEach>

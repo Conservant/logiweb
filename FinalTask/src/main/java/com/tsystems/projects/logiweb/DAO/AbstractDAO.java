@@ -1,9 +1,6 @@
 package com.tsystems.projects.logiweb.DAO;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.persistence.Query;
+import javax.persistence.*;
 import java.util.List;
 
 /**
@@ -15,33 +12,69 @@ public abstract class AbstractDAO<T> {
     protected EntityManager em;
 
     protected AbstractDAO() {
-        emf = Persistence.createEntityManagerFactory("logiwebPU");
-        em = emf.createEntityManager();
+
+
     }
 
 
     public List<T> getAll(String entities) {
+
         List<T> resultList = em.createNamedQuery("getAll"+entities).getResultList();
+
         return resultList;
     }
 
 
     public T getBy(String byWhat, String uniqName) {
+
         Query q = em.createNamedQuery("getBy"+byWhat);
         q.setParameter("uniqName", uniqName);
-        T t = (T)q.getSingleResult();
+        T t;
+        try {
+            t = (T)q.getSingleResult();
+        } catch (NoResultException e) {
+            t = null;
+        }
+
         return t;
     }
 
-    public void add(T t) {
+    public T add(T t) {
+
         em.getTransaction().begin();
         em.persist(t);
         em.getTransaction().commit();
+
+        return t;
+    }
+
+    public T update(T t) {
+
+        em.getTransaction().begin();
+        em.persist(t);
+        em.flush();
+        em.getTransaction().commit();
+
+        return t;
+
     }
 
     @Override
     protected void finalize() throws Throwable {
+
+    }
+
+
+    public void start() {
+        emf = Persistence.createEntityManagerFactory("logiwebPU");
+        em = emf.createEntityManager();
+    }
+
+
+    public void stop() {
         em.close();
         emf.close();
     }
+
+
 }

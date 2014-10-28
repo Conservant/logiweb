@@ -47,11 +47,11 @@ To change this template use File | Settings | File Templates.
         <div id="header">
 
             <div id="sitetite">
-                <h1><a href="http://www.templatemo.com" target="_parent"><img src="../images/templatemo_logo.png" alt="free css template" /></a></h1>
+                <h1><a href="" target="_parent"><img src="../images/templatemo_logo.png" alt="free css template" /></a></h1>
             </div> <!-- end of site_title -->
 
             <ul class="navigation">
-                <li><a href="manager.html">На главную</a></li>
+                <li><a href="manager.jsp">На главную</a></li>
             </ul>
 
         </div>
@@ -59,34 +59,26 @@ To change this template use File | Settings | File Templates.
             <div class="scrollContainer">
                 <div class="panel" id="home">
 
-                    <h2>Назначение фуры</h2>
+                    <h2>Назначение водителей</h2>
                     <p></p>
+                    <form action="/Manager/assignDrivers" method="post">
 
-
-                    <form action="" method="post">
-
-                        Не отгруженные заказы:<br>
+                        Не отправленные заказы:<br>
                         <select name="order" size="5">
-                            <option>Заказ такой-то</option>
+                            <c:forEach items="${shipped_orders}" var="order">
 
-
-
-
-
-
+                                <option><c:out value="${order.uniqueNumber}"/></option>
+                            </c:forEach>
                         </select>
                         <br>
-                        Доступные грузовики:<br>
-                        <select name="truck" size="5">
-                            <option>Заказ такой-то</option>
-                            <option>Заказ такой-то</option>
-                            <option>Заказ такой-то</option>
-                            <option>Заказ такой-то</option>
-                            <option>Заказ такой-то</option>
-                            <option>Заказ такой-то</option>
-                            <option>Заказ такой-то</option>
+                        Свободные водители:<br>
+                        <select multiple name="drivers[]" size="5">
+                            <c:forEach items="${free_drivers}" var="driver">
+
+                                <option><c:out value="${driver.licenseNumber}"/></option>
+                            </c:forEach>
                         </select>
-                        <input type="submit" value="Отгрузить">
+                        <input type="submit" value="Отправить">
 
 
 

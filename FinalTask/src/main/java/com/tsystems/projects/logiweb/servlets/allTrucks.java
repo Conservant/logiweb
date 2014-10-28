@@ -16,7 +16,7 @@ import java.util.List;
  * Created by StarKiller on 17.10.2014.
  */
 @WebServlet("/Manager/getTrucks")
-public class TruckServlet extends HttpServlet {
+public class AllTrucks extends HttpServlet {
 
     private TruckService service = new TruckService();
 

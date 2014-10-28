@@ -15,7 +15,7 @@ import java.util.List;
  * Created by StarKiller on 17.10.2014.
  */
 @WebServlet("/Manager/getOrders")
-public class OrderServlet extends HttpServlet {
+public class AllOrders extends HttpServlet {
 
     OrderService service = new OrderService();
 

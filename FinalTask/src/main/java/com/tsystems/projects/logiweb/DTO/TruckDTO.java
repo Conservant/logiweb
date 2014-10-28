@@ -10,6 +10,15 @@ public class TruckDTO {
     private String regNumber;
     private int requiredCountOfDrivers;
     private Capacity capacity;
+    private String order;
+
+    public String getOrder() {
+        return order;
+    }
+
+    public void setOrder(String order) {
+        this.order = order;
+    }
 
     public TruckDTO() {
     }
@@ -19,6 +28,11 @@ public class TruckDTO {
         this.regNumber = truck.getRegNumber();
         this.requiredCountOfDrivers = truck.getRequiredNumberOfDrivers();
         this.capacity = truck.getCapacity();
+        try{
+        this.order = Long.toString(truck.getOrder().getId());}
+        catch (NullPointerException e) {
+            this.order = "---";
+        }
 
     }
 

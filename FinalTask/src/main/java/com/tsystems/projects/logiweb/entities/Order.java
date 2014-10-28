@@ -11,8 +11,7 @@ import javax.persistence.*;
 @Table(name="zakaz")
 @NamedQueries({
         @NamedQuery(name = "getAllOrders", query = "select o from Order o"),
-        @NamedQuery(name = "getByUniqueNumber", query = "select o from Order o where o.uniqueNumber=:uniqName"),
-        @NamedQuery(name = "getNyStatus", query = "select o from Order o where o.status=:status")
+        @NamedQuery(name = "getByUniqueNumber", query = "select o from Order o where o.id=:uniqName")
 })
 
 public class Order {
@@ -20,23 +19,27 @@ public class Order {
     @GeneratedValue
     private long id;
 
-    @Column(name="UNIQUE_NUMBER")
-    private int uniqueNumber;
-
     @Column(name="STATUS")
     @Enumerated(EnumType.STRING)
     private OrderStatus status;
 
-    @OneToOne(cascade = CascadeType.DETACH)
-    @JoinColumn(name="TRUCK_ID")
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name="TRUCK_ID", nullable = true)
     private Truck truck;
 
-    public Order() {
-    }
+    @Column(name = "DESCRIPTION")
+    private String description;
 
-    public Order(int uniqueNumber, OrderStatus status) {
-        this.uniqueNumber = uniqueNumber;
-        this.status = status;
+    @Column(name = "WEIGHT")
+    private double weight;
+
+    @Column(name = "GPS_LATITUDE")
+    private double latitude;
+
+    @Column(name = "GPS_LONGITUDE")
+    private double longitude;
+
+    public Order() {
     }
 
     public long getId() {
@@ -45,14 +48,6 @@ public class Order {
 
     public void setId(long id) {
         this.id = id;
-    }
-
-    public int getUniqueNumber() {
-        return uniqueNumber;
-    }
-
-    public void setUniqueNumber(int uniqueNumber) {
-        this.uniqueNumber = uniqueNumber;
     }
 
     public OrderStatus getStatus() {
@@ -71,13 +66,43 @@ public class Order {
         this.truck = truck;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public double getWeight() {
+        return weight;
+    }
+
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
 
     @Override
     public String toString() {
         return "Order{" +
                 "id=" + id +
-                ", uniqueNumber=" + uniqueNumber +
-                ", status=" + status
-                ;
+                ", status=" + status +
+                ", truck" + truck;
     }
 }

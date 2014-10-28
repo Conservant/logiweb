@@ -1,3 +1,7 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
+<%@ page isELIgnored="false" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -34,7 +38,7 @@
         <div id="header">
 
             <div id="sitetite">
-                <h1><a href="http://www.templatemo.com" target="_parent"><img src="../images/templatemo_logo.png" alt="free css template" /></a></h1>
+                <h1><a href="" target="_parent"><img src="../images/logo.png"/></a></h1>
             </div> <!-- end of site_title -->
 
             <ul class="navigation">
@@ -52,9 +56,9 @@
                     <div class="col_w540">
                         <div id="contact_form">
                             <h4>Добавление груза</h4>
-                            <form action="./addingToOrder" method="post">
+                            <form action="./addItemToOrder" method="post">
                                 <label>Наименование:</label>
-                                <input type="text" name = "name">
+                                <input type="text" name = "description">
 
                                 <label>Координаты доставки</label>
                                 <label>Широта:</label>
@@ -81,10 +85,12 @@
                         <h4>Подтверждение заказа</h4>
 
 
+                        <p>
+                            <c:out value="${msg}"/>
+                        </p>
+                        <form method="post" name="contact" action="/Manager/confirmOrder" style="width: 80%;">
 
-                        <form method="post" name="contact" action="#" style="width: 80%;">
-
-                            <label>Заказ:</label> <input type="text" name="orderNumber" class="required input_field" />
+                            <label>Заказ:</label> <input type="text" value="<c:out value="order_number"/>" name="orderNumber" class="required input_field" />
                             <div class="cleaner_h10"></div>
 
                             <input type="submit" class="submit_button float_l" name="submit" value="Подтвердить" />

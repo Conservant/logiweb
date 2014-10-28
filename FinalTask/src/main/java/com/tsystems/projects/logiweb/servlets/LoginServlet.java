@@ -7,7 +7,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 /**
  * Created by StarKiller on 24.10.2014.
@@ -22,6 +21,7 @@ public class LoginServlet extends HttpServlet {
 
         if (login.equals("manager") && password.equals("123")) {
             session = req.getSession(true);
+            session.setMaxInactiveInterval(5000);
             session.setAttribute("user", "manager");
             req.getServletContext().getRequestDispatcher("/Manager/manager.jsp").forward(req, resp);
         }
@@ -36,5 +36,9 @@ public class LoginServlet extends HttpServlet {
         req.getServletContext().getRequestDispatcher("/errorpage.jsp").forward(req, resp);
     }
 
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        doPost(req, resp);
+    }
 }
 

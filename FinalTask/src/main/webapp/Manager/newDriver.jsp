@@ -45,11 +45,11 @@
         <div id="header">
 
             <div id="sitetite">
-                <h1><a href="http://www.templatemo.com" target="_parent"><img src="../images/templatemo_logo.png" alt="free css template" /></a></h1>
+                <h1><a href="" target="_parent"><img src="../images/logo.png"/></a></h1>
             </div>
 
             <ul class="navigation">
-                <a href="manager.jsp">На главную</a>
+                <a href="./manager.jsp">На главную</a>
             </ul>
 
         </div>

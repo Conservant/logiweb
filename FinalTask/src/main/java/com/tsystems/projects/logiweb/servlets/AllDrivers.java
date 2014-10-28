@@ -15,7 +15,7 @@ import java.util.List;
  * Created by StarKiller on 17.10.2014.
  */
 @WebServlet("/Manager/getDrivers")
-public class DriverServlet extends HttpServlet{
+public class AllDrivers extends HttpServlet{
 
     static DriverService service = new DriverService();
 

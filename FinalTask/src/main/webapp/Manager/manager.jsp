@@ -37,7 +37,7 @@
         <div id="header">
 
             <div id="sitetite">
-                <h1><a href="http://www.templatemo.com" target="_parent"><img src="../images/templatemo_logo.png" alt="free css template" /></a></h1>
+                <h1><a href="" target="_parent"><img src="../images/logo.png"/></a></h1>
             </div> <!-- end of site_title -->
 
             <ul class="navigation">
@@ -58,13 +58,13 @@
 
                     <div class="col_w240">
                         <h3>Все грузовики</h3>
-                        <div class="image_wrapper"><a href = "./Manager/getTrucks"><img src="../images/templatemo_image_01.jpg" alt="image 1" /></a></div>
+                        <div class="image_wrapper"><a href = "./Manager/getTrucks"><img src="../images/trucks.png"/></a></div>
                         <p>Тут можно посмотреть весь парк наших автомобилей.</p>
 
                     </div>
                     <div class="col_w240">
                         <h3>Новый грузовик</h3>
-                        <div class="image_wrapper"><a href = "./Manager/newTruck.jsp"><img src="../images/templatemo_image_02.jpg" alt="image 2" /></a></div>
+                        <div class="image_wrapper"><a href = "./Manager/newTruck.jsp"><img src="../images/truck.png"/></a></div>
                         <p>Появилась новый автомобиль? Не забудь добавить его в базу данных. Укажи регистрационный номер, вместимость и число водителей в смене.</p>
 
                     </div>
@@ -78,13 +78,13 @@
 
                     <div class="col_w240">
                         <h3>Все водители</h3>
-                        <div class="image_wrapper"><a href = "./Manager/getDrivers"><img src="../images/templatemo_image_01.jpg" alt="image 1" /></a></div>
+                        <div class="image_wrapper"><a href = "./Manager/getDrivers"><img src="../images/drivers.jpg"/></a></div>
                         <p>Тут можно посмотреть весь штат наших водителей.</p>
 
                     </div>
                     <div class="col_w240">
                         <h3>Новый водитель</h3>
-                        <div class="image_wrapper"><a href = "./Manager/newDriver.jsp"><img src="../images/templatemo_image_02.jpg" alt="image 2" /></a></div>
+                        <div class="image_wrapper"><a href = "./Manager/newDriver.jsp"><img src="../images/driver.png"/></a></div>
                         <p>Наняли нового водителя? Введи его имя и номер водительского удостоверения и он сразу попадет в базу данных.</p>
                     </div>
                 </div>
@@ -96,27 +96,27 @@
                     <div id="gallery_box">
                         <ul>
                             <li>
-                                <a href="./Manager/newOrder.jsp"><img src="../images/gallery/image_01.jpg" alt="" /></a>
+                                <a href="./Manager/newOrder.jsp"><img src="../images/gallery/new_order.png" alt="" /></a>
                                 <p>Создать заказ.</p>
                             </li>
                             <li>
-                                <a href="./Manager/newOrderItem"><img src="../images/gallery/image_02.jpg" alt="free website template" /></a>
+                                <a href="./Manager/newOrderItem.jsp"><img src="../images/gallery/confirOrders.jpg" alt="free website template" /></a>
                                 <p>Подтверждение заказа.</p>
                             </li>
                             <li>
-                                <a href="./Manager/getConfirmed"><img src="../images/gallery/image_03.jpg" alt="html css template" /></a>
+                                <a href="./Manager/getConfirmed"><img src="../images/gallery/otgruzka_2.jpg" alt="html css template" /></a>
                                 <p>Отгрузка</p>
                             </li>
                             <li>
-                                <a href="./Manager/getShipped"><img src="../images/gallery/image_04.jpg" alt="photo 4" /></a>
+                                <a href="./Manager/getShipped"><img src="../images/gallery/shipOrder.jpg" alt="photo 4" /></a>
                                 <p>Отправка</p>
                             </li>
                             <li>
-                                <a href="./Manager/getPerformed"><img src="../images/gallery/image_05.jpg" alt="photo 5" /></a>
+                                <a href="./Manager/getPerformed"><img src="../images/gallery/closeOrders.jpg" alt="photo 5" /></a>
                                 <p>Закрытие</p>
                             </li>
                             <li>
-                                <a href="./Manager/getOrders"><img src="../images/gallery/image_06.jpg" alt="photo 6" /></a>
+                                <a href="./Manager/getOrders"><img src="../images/gallery/allOrders.png" alt="photo 6" /></a>
                                 <p>Все заказы</p>
                             </li>
                         </ul>
